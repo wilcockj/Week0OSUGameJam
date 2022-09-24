@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wall1tileset.png-0e8bcc9ade489ec21c1c8ce4b01dcd0b.stex"
+path="res://.import/bricktiles.png-f6b32582fee74289ab66c9a1bcef6b96.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://wall1tileset.png"
-dest_files=[ "res://.import/wall1tileset.png-0e8bcc9ade489ec21c1c8ce4b01dcd0b.stex" ]
+source_file="res://bricktiles.png"
+dest_files=[ "res://.import/bricktiles.png-f6b32582fee74289ab66c9a1bcef6b96.stex" ]
 
 [params]
 
