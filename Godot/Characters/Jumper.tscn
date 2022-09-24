@@ -9,7 +9,7 @@ extents = Vector2( 31.5, 32 )
 [node name="JumperGuy" type="KinematicBody2D"]
 scale = Vector2( 0.5, 1 )
 script = ExtResource( 2 )
-JUMP_SPEED = 400.0
+JUMP_SPEED = 300.0
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
