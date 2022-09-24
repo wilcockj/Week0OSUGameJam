@@ -10,7 +10,6 @@ func _ready():
 func _process(delta):
 	var vec = get_global_mouse_position() # getting the vector from self to the mouset
 	position = vec # move by that vector
-	print(vec)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
