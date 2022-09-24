@@ -19,7 +19,7 @@ position = Vector2( 245, 192 )
 position = Vector2( 160, 209 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0, 0, 0, 0.878431 )
+color = Color( 0.109804, 0.109804, 0.109804, 1 )
 
 [node name="Node2D" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, 1 )

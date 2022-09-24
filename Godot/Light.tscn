@@ -16,7 +16,7 @@ frame_2/delay_sec = 0.0
 frame_3/texture = ExtResource( 2 )
 frame_3/delay_sec = 0.0
 
-[node name="Node2D" type="Node2D"]
+[node name="Light Emit" type="Node2D"]
 
 [node name="Light2D" type="Light2D" parent="."]
 texture = SubResource( 1 )
