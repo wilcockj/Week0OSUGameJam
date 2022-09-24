@@ -8,7 +8,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	var vec = get_viewport().get_mouse_position() # getting the vector from self to the mouset
+	var vec = get_global_mouse_position() # getting the vector from self to the mouset
 	position = vec # move by that vector
 	print(vec)
 
