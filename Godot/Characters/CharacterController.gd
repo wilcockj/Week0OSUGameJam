@@ -5,7 +5,6 @@ export var GRAVITY = 300.0
 export var WALK_SPEED = 200
 export var JUMP_SPEED = 100.0
 var drag = 0.2
-
 var velocity = Vector2()
 var selection_index = 1 setget set_selection, get_selection
 func _physics_process(delta):
