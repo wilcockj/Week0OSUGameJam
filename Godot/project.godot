@@ -21,6 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Week0OSUGameJam"
+run/main_scene="res://Level1.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -29,8 +30,9 @@ Global="*res://Autoload/Global.gd"
 
 [display]
 
-window/size/width=640
-window/size/height=480
+window/size/width=480
+window/size/height=288
+window/size/resizable=false
 
 [gui]
 
