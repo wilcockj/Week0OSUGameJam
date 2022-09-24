@@ -1,7 +1,7 @@
 class_name Character
 extends KinematicBody2D
 
-export var GRAVITY = 200.0
+export var GRAVITY = 300.0
 export var WALK_SPEED = 200
 export var JUMP_SPEED = 100.0
 
@@ -20,7 +20,8 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("jump"):
 			velocity.y -= JUMP_SPEED
 		# We don't need to multiply velocity by delta because "move_and_slide" already takes delta time into account.
-	velocity.y += delta * GRAVITY
+	if !is_on_floor():
+		velocity.y += delta * GRAVITY
 		# The second parameter of "move_and_slide" is the normal pointing up.
 		# In the case of a 2D platformer, in Godot, upward is negative y, which translates to -1 as a normal.
 	move_and_slide(velocity, Vector2(0, -1))
