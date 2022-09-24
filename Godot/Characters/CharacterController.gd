@@ -12,6 +12,8 @@ func _physics_process(delta):
 		velocity.y += delta * GRAVITY
 	else:
 		velocity.y = 0
+	if is_on_ceiling():
+		velocity.y += 100
 	
 	velocity.x = lerp(velocity.x, 0, drag)
 	
