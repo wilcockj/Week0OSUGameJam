@@ -8,8 +8,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Global.tilemap_width = $TileMap.get_used_rect().size.x
-	Global.tilemap_height = $TileMap.get_used_rect().size.y
+	Global.tilemap_rect = $TileMap.get_used_rect()
 	Global.map_cellsize = $TileMap.cell_size
 
 
