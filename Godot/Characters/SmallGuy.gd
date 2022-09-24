@@ -7,8 +7,10 @@ func _ready():
 func _process(delta):
 	if Global.selected == idx:
 		$Camera2D.current = true
+		$Light2D.energy = 1
 	else:
 		$Camera2D.current = false
+		$Light2D.energy = 0
 	var map_limits = Global.tilemap_rect
 	var map_cellsize = Global.map_cellsize
 	$Camera2D.limit_left = map_limits.position.x * map_cellsize.x
