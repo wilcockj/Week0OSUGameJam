@@ -37,6 +37,7 @@ func _process(delta):
 	$AngleLineBorder.clear_points()
 	$AngleLineBorder.add_point($AnimatedSprite.position)
 	$AngleLineBorder.add_point($AnimatedSprite.position + Vector2(anglechargex * 20, anglechargey*20))
+	$Arrow.look_at(Global.end_loc)
 
 
 func on_hit_water(body):

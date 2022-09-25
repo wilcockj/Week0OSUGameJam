@@ -8,7 +8,7 @@ extends "res://Level1.gd"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.can_be_selected = [1,2]
-
+	Global.end_loc = $WinArea.position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

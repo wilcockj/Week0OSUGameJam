@@ -70,15 +70,11 @@ position = Vector2( -8, -12 )
 color = Color( 0.63, 0.63, 0.63, 1 )
 
 [node name="WinArea" parent="." instance=ExtResource( 9 )]
-position = Vector2( 698, 154 )
+position = Vector2( 733, 203 )
 
 [node name="WaterBounding" parent="." instance=ExtResource( 8 )]
 position = Vector2( 518, 228 )
 scale = Vector2( 21, 0.89 )
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 7 )
-autoplay = true
 
 [node name="Label" type="Label" parent="."]
 margin_left = 5.0
@@ -88,5 +84,10 @@ margin_bottom = 284.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 10 )
 text = "Use Lenny Lava to get to the flag!"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -20.0
+autoplay = true
 
 [connection signal="body_entered" from="WinArea" to="CloudMan" method="_on_WinArea_body_entered"]
