@@ -15,15 +15,9 @@ extents = Vector2( 5.5, 9 )
 [sub_resource type="AnimatedTexture" id=2]
 frames = 4
 frame_0/texture = ExtResource( 6 )
-<<<<<<< HEAD
-frame_1/texture = ExtResource( 5 )
-frame_1/delay_sec = 0.0
-frame_2/texture = ExtResource( 4 )
-=======
 frame_1/texture = ExtResource( 4 )
 frame_1/delay_sec = 0.0
 frame_2/texture = ExtResource( 5 )
->>>>>>> ebe229456b34fb3c79904b96c7b38507e3cc6f56
 frame_2/delay_sec = 0.0
 frame_3/texture = ExtResource( 3 )
 frame_3/delay_sec = 0.0
