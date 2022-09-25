@@ -45,10 +45,10 @@ func _physics_process(delta):
 			rng.randomize()
 			random_start = rng.randf_range(0,3.14)
 		if Input.is_action_pressed("ui_left"):
-			velocity.x = -WALK_SPEED
+			velocity.x += -WALK_SPEED * delta * 15
 			$AnimatedSprite.flip_h = 1
 		elif Input.is_action_pressed("ui_right"):
-			velocity.x =  WALK_SPEED
+			velocity.x +=  WALK_SPEED * delta * 15
 			$AnimatedSprite.flip_h = 0
 		else:
 			pass
@@ -66,6 +66,8 @@ func _physics_process(delta):
 		velocity += Vector2(anglechargex * 1000, 0)
 		is_charging_jump = false
 		jump_charge = 0
+		anglechargex = 0
+		anglechargey = 0
 
 			
 	move_and_slide(velocity, Vector2(0, -1))
