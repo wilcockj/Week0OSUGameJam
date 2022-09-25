@@ -34,3 +34,15 @@ func _process(delta):
 	$AngleLineBorder.clear_points()
 	$AngleLineBorder.add_point($AnimatedSprite.position)
 	$AngleLineBorder.add_point($AnimatedSprite.position + Vector2(anglechargex * 20, anglechargey*20))
+
+
+func on_hit_water(body):
+	print("ooch die")
+	print(body.name)
+	if body.name == "CloudMan":
+		get_tree().reload_current_scene()
+		
+		#Global.can_be_selected.erase(idx)
+		#Global.selected = 2
+		
+		queue_free()
