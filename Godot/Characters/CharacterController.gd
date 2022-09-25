@@ -33,7 +33,7 @@ func _physics_process(delta):
 
 		if is_charging_jump:
 			#print("in thing")
-			jump_charge = (1 + sin((OS.get_ticks_msec() - charge_start_time)*.005))
+			jump_charge = (1 + sin((OS.get_ticks_msec() - charge_start_time)*.005 - PI/2))
 			jump_charge = (jump_charge)/(2)
 			print(jump_charge)
 		if Input.is_action_just_pressed("jump") and is_on_floor():
