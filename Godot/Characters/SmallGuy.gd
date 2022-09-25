@@ -20,4 +20,4 @@ func _process(delta):
 		$Camera2D.limit_bottom = map_limits.end.y * map_cellsize.y
 	$Line2D.clear_points()
 	$Line2D.add_point($AnimatedSprite.position + Vector2(20,20))
-	$Line2D.add_point($AnimatedSprite.position + Vector2(20, 20 -jump_charge * 50))
+	$Line2D.add_point($AnimatedSprite.position + Vector2(20, 20 -jump_charge * 25))

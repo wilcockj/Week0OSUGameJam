@@ -22,5 +22,5 @@ func _process(delta):
 	#var barthing = Vector2(position.x,position.y + (jump_charge*50))
 	$Line2D.clear_points()
 	$Line2D.add_point($AnimatedSprite.position + Vector2(20,20))
-	$Line2D.add_point($AnimatedSprite.position + Vector2(20, 20 -jump_charge * 50))
+	$Line2D.add_point($AnimatedSprite.position + Vector2(20, 20 -jump_charge * 25))
 	
