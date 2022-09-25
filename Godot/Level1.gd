@@ -9,6 +9,7 @@ extends Node2D
 func _ready():
 	Global.tilemap_rect = $TileMap.get_used_rect()
 	Global.map_cellsize = $TileMap.cell_size
+	Global.current_level = 1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

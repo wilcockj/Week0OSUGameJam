@@ -44,8 +44,16 @@ func on_hit_water(body):
 	print(body.name)
 	if body.name == "CloudMan":
 		get_tree().reload_current_scene()
-		
+		for member in get_tree().get_nodes_in_group("stones"):
+			member.queue_free()
+		Global.can_be_selected = [1,2,3]
 		#Global.can_be_selected.erase(idx)
 		#Global.selected = 2
 		
 		queue_free()
+
+
+func _on_WinArea_body_entered(body):
+	if body.name == "CloudMan":
+		print("winner guy")
+		Global.go_next_stage()

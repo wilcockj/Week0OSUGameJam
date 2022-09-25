@@ -46,6 +46,7 @@ func on_hit_water(body):
 	if body.name == "LavaMan":
 		var l = lavaplatform.instance()
 		l.position = global_position
+		l.add_to_group("stones")
 		get_tree().get_root().add_child(l)
 		Global.can_be_selected.erase(idx)
 		Global.selected = 2
