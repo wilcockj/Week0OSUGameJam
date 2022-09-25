@@ -71,7 +71,7 @@ position = Vector2( -8, -12 )
 color = Color( 0.63, 0.63, 0.63, 1 )
 
 [node name="WinArea" parent="." instance=ExtResource( 7 )]
-position = Vector2( 938, 202 )
+position = Vector2( 973, 251 )
 
 [node name="WaterBounding" parent="." instance=ExtResource( 8 )]
 position = Vector2( 325, 169 )
