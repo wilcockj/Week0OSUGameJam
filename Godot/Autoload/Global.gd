@@ -18,7 +18,4 @@ func _process(delta):
 			member.queue_free()
 		can_be_selected = [1,2]
 	if Input.is_action_just_pressed("exit"):
-		if OS.has_feature('JavaScript'):
-			JavaScript.eval("window.close()")	
-		else:	
-			get_tree().quit()
+		get_tree().quit()
