@@ -71,9 +71,8 @@ position = Vector2( 215, 206 )
 JUMP_SPEED = 250.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 position = Vector2( -8, -12 )
-color = Color( 0.239216, 0.239216, 0.239216, 1 )
+color = Color( 0.63, 0.63, 0.63, 1 )
 
 [node name="WaterBounding" type="Area2D" parent="."]
 position = Vector2( 384, 228 )
