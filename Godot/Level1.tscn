@@ -56,13 +56,15 @@ tile_data = PoolIntArray( 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0
 
 [node name="LavaMan" parent="." instance=ExtResource( 2 )]
 position = Vector2( 134, 220 )
+JUMP_SPEED = 250.0
 
 [node name="CloudMan" parent="." instance=ExtResource( 3 )]
 position = Vector2( 199, 93 )
-JUMP_SPEED = 225.0
+JUMP_SPEED = 250.0
 
 [node name="WaterMan" parent="." instance=ExtResource( 7 )]
 position = Vector2( 398, 187 )
+JUMP_SPEED = 250.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2( -8, -12 )
