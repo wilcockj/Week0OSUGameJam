@@ -53,3 +53,4 @@ func on_hit_water(body):
 func _on_WinArea_body_entered(body):
 	if body.name == "CloudMan":
 		print("winner guy")
+		Global.go_next_stage()
