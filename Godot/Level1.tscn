@@ -67,7 +67,7 @@ position = Vector2( 199, 93 )
 JUMP_SPEED = 250.0
 
 [node name="WaterMan" parent="." instance=ExtResource( 7 )]
-position = Vector2( 215, 206 )
+position = Vector2( 351, 187 )
 JUMP_SPEED = 250.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]

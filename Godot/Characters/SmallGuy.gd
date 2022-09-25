@@ -8,9 +8,10 @@ func _process(delta):
 	if Global.selected == idx:
 		$Camera2D.current = true
 		$Light2D.energy = 1
+		$ControlHUD.visible = true
 	else:
 		$Camera2D.current = false
-		$Camera2D.current = false
+		$ControlHUD.visible = false
 		$Light2D.energy = 0
 	var map_limits = Global.tilemap_rect
 	var map_cellsize = Global.map_cellsize
