@@ -18,12 +18,13 @@ func _process(delta):
 		$Camera2D.limit_right = map_limits.end.x * map_cellsize.x
 		$Camera2D.limit_top = map_limits.position.y * map_cellsize.y
 		$Camera2D.limit_bottom = map_limits.end.y * map_cellsize.y
-	$Charge.text = str(jump_charge)
 	#var barthing = Vector2(position.x,position.y + (jump_charge*50))
 	$Line2D.clear_points()
 	$Line2D.add_point($AnimatedSprite.position + Vector2(20,20))
 	$Line2D.add_point($AnimatedSprite.position + Vector2(20, 20 -jump_charge * 25))
 	
-	
+	$AngleLine.clear_points()
+	$AngleLine.add_point($AnimatedSprite.position)
+	$AngleLine.add_point($AnimatedSprite.position + Vector2(anglechargex * 20, anglechargey*20))
 	
 	
