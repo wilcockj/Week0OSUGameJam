@@ -40,8 +40,6 @@ func _process(delta):
 
 
 func on_hit_water(body):
-	print("ooch die")
-	print(body.name)
 	if body.name == "CloudMan":
 		get_tree().reload_current_scene()
 		for member in get_tree().get_nodes_in_group("stones"):
@@ -55,5 +53,4 @@ func on_hit_water(body):
 
 func _on_WinArea_body_entered(body):
 	if body.name == "CloudMan":
-		print("winner guy")
 		Global.go_next_stage()
