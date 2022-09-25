@@ -83,6 +83,7 @@ local_coords = false
 emission_shape = 2
 emission_rect_extents = Vector2( 12, 12 )
 gravity = Vector2( 0, 0 )
+radial_accel = 15.6
 color = Color( 0.721569, 0.721569, 0.721569, 1 )
 color_ramp = SubResource( 9 )
 
