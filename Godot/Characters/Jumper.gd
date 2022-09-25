@@ -38,8 +38,6 @@ func _process(delta):
 	$AngleLineBorder.add_point($AnimatedSprite.position + Vector2(anglechargex * 20, anglechargey*20))
 
 func on_hit_water(body):
-	print("ooch die")
-	print(body.name)
 	if body.name == "LavaMan":
 		var l = lavaplatform.instance()
 		l.position = global_position

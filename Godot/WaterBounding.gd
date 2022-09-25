@@ -18,4 +18,4 @@ func _ready():
 
 func _on_WaterBounding_body_entered(body):
 	emit_signal("hitwater",body)
-	print("water hit on body")
+	
