@@ -95,13 +95,6 @@ default_color = Color( 1, 0.345098, 0.345098, 1 )
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Charge" type="Label" parent="."]
-margin_left = 44.0
-margin_top = -36.0
-margin_right = 84.0
-margin_bottom = -22.0
-text = "test"
-
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2( 1, 2 )
 z_index = -1
