@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/onlymp3.to - 8 Bit Chillout! Chill Dreamy Game Music by HeatleyBros-8El8ZP8LMFE-192k-1654190566709.mp3-a04a792afd4e967ee41d05ca6d85d2bb.mp3str"
+
+[deps]
+
+source_file="res://onlymp3.to - 8 Bit Chillout! Chill Dreamy Game Music by HeatleyBros-8El8ZP8LMFE-192k-1654190566709.mp3"
+dest_files=[ "res://.import/onlymp3.to - 8 Bit Chillout! Chill Dreamy Game Music by HeatleyBros-8El8ZP8LMFE-192k-1654190566709.mp3-a04a792afd4e967ee41d05ca6d85d2bb.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

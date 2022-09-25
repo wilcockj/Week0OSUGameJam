@@ -8,7 +8,10 @@ func _process(delta):
 	if Global.selected == idx:
 		$Camera2D.current = true
 		$Light2D.energy = 1
-		$ControlHUD.visible = true
+		if get_parent().name == "Level0":
+			$ControlHUD.visible = true
+		else:
+			$ControlHUD.visible = false
 	else:
 		$Camera2D.current = false
 		$ControlHUD.visible = false
@@ -41,7 +44,7 @@ func on_hit_water(body):
 		get_tree().reload_current_scene()
 		for member in get_tree().get_nodes_in_group("stones"):
 			member.queue_free()
-		Global.can_be_selected = [1,2,3]
+		Global.can_be_selected = [1,2]
 		#Global.can_be_selected.erase(idx)
 		#Global.selected = 2
 		
