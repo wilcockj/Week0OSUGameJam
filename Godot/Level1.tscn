@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Tilemap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Characters/LavaMan.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Level1.gd" type="Script" id=5]
 [ext_resource path="res://Water/waterlow.tres" type="Texture" id=6]
 [ext_resource path="res://Characters/WaterMan.tscn" type="PackedScene" id=7]
+[ext_resource path="res://WaterBounding.gd" type="Script" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "watertop.tres 0"
@@ -38,6 +39,9 @@
 1/shapes = [  ]
 1/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 9.22821, 10 )
+
 [node name="Level1" type="Node2D"]
 script = ExtResource( 5 )
 
@@ -54,7 +58,7 @@ cell_size = Vector2( 24, 24 )
 format = 1
 tile_data = PoolIntArray( 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0 )
 
-[node name="LavaMan" parent="." instance=ExtResource( 2 )]
+[node name="LavaMan" parent="." groups=["LavaGuy"] instance=ExtResource( 2 )]
 position = Vector2( 134, 220 )
 JUMP_SPEED = 250.0
 
@@ -63,9 +67,21 @@ position = Vector2( 199, 93 )
 JUMP_SPEED = 250.0
 
 [node name="WaterMan" parent="." instance=ExtResource( 7 )]
-position = Vector2( 398, 187 )
+position = Vector2( 215, 206 )
 JUMP_SPEED = 250.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 position = Vector2( -8, -12 )
 color = Color( 0.239216, 0.239216, 0.239216, 1 )
+
+[node name="WaterBounding" type="Area2D" parent="."]
+position = Vector2( 384, 228 )
+scale = Vector2( 7.58544, 0.889812 )
+script = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterBounding"]
+position = Vector2( -0.131836, 0 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="WaterBounding" to="WaterBounding" method="_on_WaterBounding_body_entered"]

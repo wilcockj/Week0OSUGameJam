@@ -66,7 +66,6 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-frame = 3
 playing = true
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -101,5 +100,20 @@ end_cap_mode = 2
 [node name="AngleLine" type="Line2D" parent="."]
 width = 2.0
 default_color = Color( 0.823529, 0.823529, 0.823529, 1 )
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="AngleLineBorder" type="Line2D" parent="."]
+z_index = -1
+width = 4.0
+default_color = Color( 0, 0, 0, 1 )
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="ChargingBorder" type="Line2D" parent="."]
+position = Vector2( 1, -10 )
+z_index = -1
+width = 4.0
+default_color = Color( 0, 0, 0, 1 )
 begin_cap_mode = 2
 end_cap_mode = 2

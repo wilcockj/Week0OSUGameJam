@@ -1,11 +1,48 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://Characters/Jumper.gd" type="Script" id=2]
 [ext_resource path="res://light_texture/Untitled_Artwork-4.png" type="Texture" id=3]
 [ext_resource path="res://light_texture/Untitled_Artwork-1.png" type="Texture" id=4]
 [ext_resource path="res://light_texture/Untitled_Artwork-2.png" type="Texture" id=5]
 [ext_resource path="res://light_texture/Untitled_Artwork-3.png" type="Texture" id=6]
+
+[sub_resource type="GDScript" id=10]
+script/source = "extends \"res://Characters/CharacterController.gd\"
+
+var idx = 1
+func _ready():
+	set_selection(idx)
+
+func _process(delta):
+	if Global.selected == idx:
+		$Camera2D.current = true
+		$Light2D.energy = 1
+	else:
+		$Camera2D.current = false
+		$Light2D.energy = 0
+	var map_limits = Global.tilemap_rect
+	var map_cellsize = Global.map_cellsize
+	if map_limits and map_cellsize:
+		$Camera2D.limit_left = map_limits.position.x * map_cellsize.x
+		$Camera2D.limit_right = map_limits.end.x * map_cellsize.x
+		$Camera2D.limit_top = map_limits.position.y * map_cellsize.y
+		$Camera2D.limit_bottom = map_limits.end.y * map_cellsize.y
+	#var barthing = Vector2(position.x,position.y + (jump_charge*50))
+	$Line2D.clear_points()
+	$Line2D.add_point($AnimatedSprite.position + Vector2(20,20))
+	$Line2D.add_point($AnimatedSprite.position + Vector2(20, 20 -jump_charge * 25))
+	$ChargingBorder.clear_points()
+	$ChargingBorder.add_point($AnimatedSprite.position + Vector2(20,20))
+	$ChargingBorder.add_point($AnimatedSprite.position + Vector2(20, 20 -jump_charge * 25))
+	
+	$AngleLine.clear_points()
+	$AngleLine.add_point($AnimatedSprite.position)
+	$AngleLine.add_point($AnimatedSprite.position + Vector2(anglechargex * 20, anglechargey*20))
+
+	
+	
+	
+"
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.5, 32 )
@@ -29,7 +66,7 @@ animations = [ {
 } ]
 
 [node name="JumperGuy" type="KinematicBody2D"]
-script = ExtResource( 2 )
+script = SubResource( 10 )
 JUMP_SPEED = 350.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -63,3 +100,6 @@ margin_bottom = -22.0
 text = "test"
 
 [node name="AngleLine" type="Line2D" parent="."]
+
+[node name="AngleLineBorder" type="Line2D" parent="."]
+width = 12.0
