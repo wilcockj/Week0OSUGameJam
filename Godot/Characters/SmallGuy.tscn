@@ -1,33 +1,28 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://waterchar.png" type="Texture" id=1]
-[ext_resource path="res://light_texture/Untitled_Artwork-3.png" type="Texture" id=2]
-[ext_resource path="res://Characters/WaterMan.gd" type="Script" id=3]
+[ext_resource path="res://cloudchar.png" type="Texture" id=1]
+[ext_resource path="res://Characters/SmallGuy.gd" type="Script" id=2]
+[ext_resource path="res://light_texture/Untitled_Artwork-4.png" type="Texture" id=3]
 [ext_resource path="res://light_texture/Untitled_Artwork-1.png" type="Texture" id=4]
-[ext_resource path="res://light_texture/Untitled_Artwork-4.png" type="Texture" id=5]
-[ext_resource path="res://light_texture/Untitled_Artwork-2.png" type="Texture" id=6]
-[ext_resource path="res://Characters/Names/Untitled_Artwork 1.png" type="Texture" id=7]
+[ext_resource path="res://light_texture/Untitled_Artwork-2.png" type="Texture" id=5]
+[ext_resource path="res://light_texture/Untitled_Artwork-3.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6, 8.5 )
+extents = Vector2( 8, 8 )
 
 [sub_resource type="AtlasTexture" id=2]
-flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 24, 16, 24 )
 
 [sub_resource type="AtlasTexture" id=3]
-flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 16, 24, 16, 24 )
 
 [sub_resource type="AtlasTexture" id=4]
-flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 32, 24, 16, 24 )
 
 [sub_resource type="AtlasTexture" id=5]
-flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 48, 24, 16, 24 )
 
@@ -42,35 +37,35 @@ animations = [ {
 [sub_resource type="AnimatedTexture" id=7]
 frames = 4
 frame_0/texture = ExtResource( 4 )
-frame_1/texture = ExtResource( 6 )
+frame_1/texture = ExtResource( 5 )
 frame_1/delay_sec = 0.0
-frame_2/texture = ExtResource( 2 )
+frame_2/texture = ExtResource( 6 )
 frame_2/delay_sec = 0.0
-frame_3/texture = ExtResource( 5 )
+frame_3/texture = ExtResource( 3 )
 frame_3/delay_sec = 0.0
 
-[sub_resource type="AnimatedTexture" id=8]
-frame_0/texture = ExtResource( 7 )
+[node name="SmallMan" type="KinematicBody2D"]
+script = ExtResource( 2 )
+JUMP_SPEED = 200.0
 
-[node name="WaterMan" type="KinematicBody2D"]
-script = ExtResource( 3 )
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, 4 )
+zoom = Vector2( 0.5, 0.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 3.5 )
+position = Vector2( 0, 4 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-frame = 1
+frame = 3
 playing = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2( 0.5, 0.5 )
+[node name="AngleLine" type="Line2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="."]
+begin_cap_mode = 2
+end_cap_mode = 2
 
 [node name="Light2D" type="Light2D" parent="."]
 texture = SubResource( 7 )
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -16 )
-z_index = 10
-texture = SubResource( 8 )

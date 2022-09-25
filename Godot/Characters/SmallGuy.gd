@@ -21,3 +21,7 @@ func _process(delta):
 	$Line2D.clear_points()
 	$Line2D.add_point($AnimatedSprite.position + Vector2(20,20))
 	$Line2D.add_point($AnimatedSprite.position + Vector2(20, 20 -jump_charge * 50))
+	
+	$AngleLine.clear_points()
+	$AngleLine.add_point($AnimatedSprite.position)
+	$AngleLine.add_point($AnimatedSprite.position + Vector2(anglechargex * 20, anglechargey*20))

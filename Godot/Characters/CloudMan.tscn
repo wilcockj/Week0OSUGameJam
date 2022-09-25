@@ -62,7 +62,6 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-frame = 2
 playing = true
 
 [node name="Line2D" type="Line2D" parent="."]
@@ -76,3 +75,5 @@ texture = SubResource( 7 )
 position = Vector2( 1, -16 )
 z_index = 10
 texture = SubResource( 8 )
+
+[node name="AngleLine" type="Line2D" parent="."]
