@@ -57,6 +57,7 @@ position = Vector2( 245, 192 )
 
 [node name="SmallMan" parent="." instance=ExtResource( 3 )]
 position = Vector2( 160, 209 )
+JUMP_SPEED = 225.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
