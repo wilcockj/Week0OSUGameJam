@@ -79,6 +79,7 @@ texture = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "lavadude"
+frame = 2
 playing = true
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -112,3 +113,5 @@ emission_rect_extents = Vector2( 12, 12 )
 gravity = Vector2( 0, 10 )
 color = Color( 0.862745, 0.392157, 0.392157, 1 )
 color_ramp = SubResource( 9 )
+
+[node name="AngleLine" type="Line2D" parent="."]

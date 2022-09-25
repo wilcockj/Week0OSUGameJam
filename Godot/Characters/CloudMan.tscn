@@ -66,7 +66,6 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-frame = 3
 playing = true
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -96,3 +95,5 @@ width = 2.0
 default_color = Color( 0.823529, 0.823529, 0.823529, 1 )
 begin_cap_mode = 2
 end_cap_mode = 2
+
+[node name="AngleLine" type="Line2D" parent="."]
