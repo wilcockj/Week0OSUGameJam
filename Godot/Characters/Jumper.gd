@@ -9,7 +9,7 @@ func _process(delta):
 	if Global.selected == idx:
 		$Camera2D.current = true
 		$Light2D.energy = 1
-		if get_parent().name == "Tutorial Level":
+		if get_parent().name == "Level0":
 			$ControlHUD.visible = true
 		else:
 			$ControlHUD.visible = false
