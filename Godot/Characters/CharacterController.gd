@@ -16,6 +16,9 @@ var anglechargex = 0
 var anglechargey = 0
 var random_start = 0.0
 
+func _ready():
+	get_parent().get_node("WaterBounding").connect("hitwater", self, "on_hit_water") 
+
 func _physics_process(delta):	
 	var is_selected = selection_index == Global.selected
 		
@@ -62,8 +65,8 @@ func _physics_process(delta):
 			print(random_start)
 			
 	if is_charging_jump and Input.is_action_just_released("jump") and is_on_floor():
-		velocity.y -= JUMP_SPEED * jump_charge
-		velocity += Vector2(anglechargex * 1000, 0)
+		#velocity.y -= JUMP_SPEED * jump_charge
+		velocity += Vector2(anglechargex * jump_charge * JUMP_SPEED * 2, anglechargey * jump_charge * JUMP_SPEED * 2)
 		is_charging_jump = false
 		jump_charge = 0
 		anglechargex = 0
@@ -72,11 +75,14 @@ func _physics_process(delta):
 			
 	move_and_slide(velocity, Vector2(0, -1))
 	if Input.is_action_just_pressed("select_1"):
-		Global.selected = 1
+		if 1 in Global.can_be_selected:
+			Global.selected = 1
 	elif Input.is_action_just_pressed("select_2"):
-		Global.selected = 2
+		if 2 in Global.can_be_selected:
+			Global.selected = 2
 	elif Input.is_action_just_pressed("select_3"):
-		Global.selected = 3
+		if 3 in Global.can_be_selected:
+			Global.selected = 3
 
 
 func get_selection():
@@ -84,3 +90,6 @@ func get_selection():
 	
 func set_selection(var new_selection) -> void:
 	selection_index = new_selection
+
+func on_hit_water(body):
+	print("hit water")

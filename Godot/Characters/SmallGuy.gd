@@ -10,6 +10,7 @@ func _process(delta):
 		$Light2D.energy = 1
 	else:
 		$Camera2D.current = false
+		$Camera2D.current = false
 		$Light2D.energy = 0
 	var map_limits = Global.tilemap_rect
 	var map_cellsize = Global.map_cellsize
@@ -21,7 +22,14 @@ func _process(delta):
 	$Line2D.clear_points()
 	$Line2D.add_point($AnimatedSprite.position + Vector2(20,20))
 	$Line2D.add_point($AnimatedSprite.position + Vector2(20, 20 -jump_charge * 25))
+	$ChargingBorder.clear_points() 
+	$ChargingBorder.add_point($AnimatedSprite.position + Vector2(20,20))
+	$ChargingBorder.add_point($AnimatedSprite.position + Vector2(20, 20 -jump_charge * 25))
 	
 	$AngleLine.clear_points()
 	$AngleLine.add_point($AnimatedSprite.position)
 	$AngleLine.add_point($AnimatedSprite.position + Vector2(anglechargex * 20, anglechargey*20))
+	
+	$AngleLineBorder.clear_points()
+	$AngleLineBorder.add_point($AnimatedSprite.position)
+	$AngleLineBorder.add_point($AnimatedSprite.position + Vector2(anglechargex * 20, anglechargey*20))
