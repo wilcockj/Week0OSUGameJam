@@ -1,4 +1,4 @@
-extends Node2D
+extends "res://Level1.gd"
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -7,8 +7,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Global.tilemap_rect = $TileMap.get_used_rect()
-	Global.map_cellsize = $TileMap.cell_size
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -79,7 +79,7 @@ texture = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "lavadude"
-frame = 3
+frame = 2
 playing = true
 
 [node name="Sprite" type="Sprite" parent="."]
