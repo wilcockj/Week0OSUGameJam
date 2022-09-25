@@ -17,7 +17,9 @@ var anglechargey = 0
 var random_start = 0.0
 
 func _ready():
-	get_parent().get_node("WaterBounding").connect("hitwater", self, "on_hit_water") 
+	for i in get_parent().get_children():
+		if "WaterBounding" in i.name:
+			get_parent().get_node(i.name).connect("hitwater", self, "on_hit_water") 
 
 func _physics_process(delta):	
 	var is_selected = selection_index == Global.selected
@@ -62,7 +64,6 @@ func _physics_process(delta):
 			jump_charge = (jump_charge)/(2)
 			anglechargex = cos((OS.get_ticks_msec() - charge_start_time) * .008 - random_start)
 			anglechargey = -abs(sin((OS.get_ticks_msec() - charge_start_time) * .008 - random_start))
-			print(random_start)
 			
 	if is_charging_jump and Input.is_action_just_released("jump") and is_on_floor():
 		#velocity.y -= JUMP_SPEED * jump_charge
