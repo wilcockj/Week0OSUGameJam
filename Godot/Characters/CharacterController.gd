@@ -80,10 +80,6 @@ func _physics_process(delta):
 	elif Input.is_action_just_pressed("select_2"):
 		if 2 in Global.can_be_selected:
 			Global.selected = 2
-	elif Input.is_action_just_pressed("select_3"):
-		if 3 in Global.can_be_selected:
-			Global.selected = 3
-
 
 func get_selection():
 	return selection_index
