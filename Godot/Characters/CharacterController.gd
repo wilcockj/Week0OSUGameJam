@@ -7,15 +7,14 @@ export var JUMP_SPEED = 100.0
 var drag = 0.2
 var velocity = Vector2()
 var selection_index = 1 setget set_selection, get_selection
-func _physics_process(delta):
-	
-	var is_falling = velocity.y > 0.0 and not is_on_floor()
-	var is_jumping = Input.is_action_just_pressed("jump") and is_on_floor()
-	var is_double_jumping = Input.is_action_just_pressed("jump") and is_falling
-	var is_idling = is_on_floor() and is_zero_approx(velocity.x)
-	var is_running = is_on_floor() and not is_zero_approx(velocity.x)
+
+var is_charging_jump = false
+var jumped = false
+var charge_start_time = 0
+var jump_charge = 0
+func _physics_process(delta):	
 	var is_selected = selection_index == Global.selected
-	
+		
 	if !is_on_floor():
 		velocity.y += delta * GRAVITY
 	else:
@@ -25,7 +24,23 @@ func _physics_process(delta):
 		velocity.y += 100
 	
 	velocity.x = lerp(velocity.x, 0, drag)
+	
 	if is_selected:
+		var is_falling = velocity.y > 0.0 and not is_on_floor()
+		var is_double_jumping = Input.is_action_just_pressed("jump") and is_falling
+		var is_idling = is_on_floor() and is_zero_approx(velocity.x)
+		var is_running = is_on_floor() and not is_zero_approx(velocity.x)
+
+		if is_charging_jump:
+			#print("in thing")
+			jump_charge = (1 + sin((OS.get_ticks_msec() - charge_start_time)*.005))
+			jump_charge = (jump_charge)/(2)
+			print(jump_charge)
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			is_charging_jump = true
+			charge_start_time = OS.get_ticks_msec()
+			print("starting charge")
+			print(is_charging_jump)
 		if Input.is_action_pressed("ui_left"):
 			velocity.x = -WALK_SPEED
 			$AnimatedSprite.flip_h = 1
@@ -34,8 +49,12 @@ func _physics_process(delta):
 			$AnimatedSprite.flip_h = 0
 		else:
 			velocity.x = 0
-		if Input.is_action_just_pressed("jump") and is_on_floor():
-			velocity.y -= JUMP_SPEED
+		if is_charging_jump and Input.is_action_just_released("jump") and is_on_floor():
+			velocity.y -= JUMP_SPEED * jump_charge
+			is_charging_jump = false
+			print("jumped")
+			print(is_charging_jump)
+			jump_charge = 0
 			
 	move_and_slide(velocity, Vector2(0, -1))
 	if Input.is_action_just_pressed("select_1"):
