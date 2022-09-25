@@ -49,11 +49,14 @@ func _physics_process(delta):
 			var rng = RandomNumberGenerator.new()
 			rng.randomize()
 			random_start = rng.randf_range(0,3.14)
-		if Input.is_action_pressed("ui_left"):
-			velocity.x += -WALK_SPEED * delta * 15
+		var input_vector = Vector2.ZERO
+		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+
+		if input_vector.x < 0:#Input.is_action_pressed("ui_left"):
+			velocity.x += -WALK_SPEED * delta * 15 * -input_vector.x
 			$AnimatedSprite.flip_h = 1
-		elif Input.is_action_pressed("ui_right"):
-			velocity.x +=  WALK_SPEED * delta * 15
+		elif input_vector.x > 0:#Input.is_action_pressed("ui_right"):
+			velocity.x +=  WALK_SPEED * delta * 15 * input_vector.x
 			$AnimatedSprite.flip_h = 0
 		else:
 			pass
