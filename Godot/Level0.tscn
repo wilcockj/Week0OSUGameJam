@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://onlymp3.to - 8 Bit Chillout! Chill Dreamy Game Music by HeatleyBros-8El8ZP8LMFE-192k-1654190566709.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Tutorial Level.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Characters/LavaMan.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Characters/CloudMan.tscn" type="PackedScene" id=6]
 [ext_resource path="res://WinArea.tscn" type="PackedScene" id=7]
+[ext_resource path="res://font.tres" type="DynamicFont" id=8]
 
 [node name="Level0" type="Node2D"]
 script = ExtResource( 2 )
@@ -33,5 +34,14 @@ autoplay = true
 
 [node name="WinArea" parent="." instance=ExtResource( 7 )]
 position = Vector2( 408, 202 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 25.0
+margin_top = 269.0
+margin_right = 277.0
+margin_bottom = 285.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 8 )
+text = "Get Claudia Cloud to the flag!"
 
 [connection signal="body_entered" from="WinArea" to="CloudMan" method="_on_WinArea_body_entered"]
