@@ -62,8 +62,8 @@ func _physics_process(delta):
 			#print("in thing")
 			jump_charge = (1 + sin((OS.get_ticks_msec() - charge_start_time)*.005 - random_start))
 			jump_charge = (jump_charge)/(2)
-			anglechargex = cos((OS.get_ticks_msec() - charge_start_time) * .008 - random_start)
-			anglechargey = -abs(sin((OS.get_ticks_msec() - charge_start_time) * .008 - random_start))
+			anglechargex = cos((OS.get_ticks_msec() - charge_start_time) * .003 - random_start)
+			anglechargey = -abs(sin((OS.get_ticks_msec() - charge_start_time) * .003 - random_start))
 			
 	if is_charging_jump and Input.is_action_just_released("jump") and is_on_floor():
 		#velocity.y -= JUMP_SPEED * jump_charge
