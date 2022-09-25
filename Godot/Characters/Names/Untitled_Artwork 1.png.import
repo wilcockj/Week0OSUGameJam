@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/waterchar.png-dc34f9e12aeffd09cf8ef53c6fb731e6.stex"
+path="res://.import/Untitled_Artwork 1.png-69fe66b758bb8ceba3aa6674fb76a287.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://waterchar.png"
-dest_files=[ "res://.import/waterchar.png-dc34f9e12aeffd09cf8ef53c6fb731e6.stex" ]
+source_file="res://Characters/Names/Untitled_Artwork 1.png"
+dest_files=[ "res://.import/Untitled_Artwork 1.png-69fe66b758bb8ceba3aa6674fb76a287.stex" ]
 
 [params]
 
