@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Tilemap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Characters/WaterMan.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Characters/LavaMan.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Characters/CloudMan.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Tutorial Level.gd" type="Script" id=5]
-[ext_resource path="res://WaterBounding.tscn" type="PackedScene" id=6]
+[ext_resource path="res://WaterBounding.tscn" type="PackedScene" id=7]
+[ext_resource path="res://onlymp3.to - 8 Bit Chillout! Chill Dreamy Game Music by HeatleyBros-8El8ZP8LMFE-192k-1654190566709.mp3" type="AudioStream" id=8]
 
 [node name="Tutorial Level" type="Node2D"]
 script = ExtResource( 5 )
@@ -27,5 +28,9 @@ JUMP_SPEED = 250.0
 position = Vector2( 263, 241 )
 JUMP_SPEED = 250.0
 
-[node name="WaterBounding" parent="." instance=ExtResource( 6 )]
+[node name="WaterBounding" parent="." instance=ExtResource( 7 )]
 position = Vector2( 430, 359 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
