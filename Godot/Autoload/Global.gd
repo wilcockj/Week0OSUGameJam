@@ -16,3 +16,5 @@ func _process(delta):
 		for member in get_tree().get_nodes_in_group("stones"):
 			member.queue_free()
 		can_be_selected = [1,2]
+	if Input.is_action_just_pressed("exit"):
+		get_tree().quit()
