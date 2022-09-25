@@ -7,6 +7,12 @@ var can_be_selected = [1,2]
 var current_level = 0
 
 func go_next_stage():
-	print(current_level)
 	current_level += 1
 	get_tree().change_scene("res://Level"+str(current_level)+".tscn")
+
+func _process(delta):
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
+		for member in get_tree().get_nodes_in_group("stones"):
+			member.queue_free()
+		can_be_selected = [1,2]
